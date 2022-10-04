@@ -30,7 +30,7 @@ class _OnbordingScreenState extends State<OnbordingScreen> {
           ),
           Container(
             // height: MediaQuery.of(context).size.height / 3,
-            margin: EdgeInsets.only(top: 65.0),
+            margin: const EdgeInsets.only(top: 65.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
