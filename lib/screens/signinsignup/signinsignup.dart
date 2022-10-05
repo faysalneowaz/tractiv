@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tractiv/constent/appconstent.dart';
+import 'package:tractiv/screens/signinsignup/body/signupmailphone.dart';
 
 class Signinsignupscreen extends StatefulWidget {
   const Signinsignupscreen({super.key});
@@ -95,13 +96,16 @@ class _SigninsignupscreenState extends State<Signinsignupscreen>
                 ],
               ),
             ),
-            SizedBox(
-              height: 100,
+            Container(
+              margin: EdgeInsets.only(top: 30),
+              padding: EdgeInsets.all(12.0),
+              color: Colors.amber,
+              height: 150,
               width: double.maxFinite,
               child: TabBarView(
                 controller: _tabController,
                 children: const [
-                  Text("Tab1"),
+                  Signupemailphone(),
                   Text("Tab1"),
                 ],
               ),
