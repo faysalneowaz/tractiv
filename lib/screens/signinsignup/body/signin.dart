@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tractiv/constent/appconstent.dart';
 import 'package:tractiv/constent/whiteiconbutton.dart';
+import 'package:tractiv/onbording/onboardpageview.dart';
 
 class Signin extends StatefulWidget {
   const Signin({super.key});
@@ -56,17 +57,68 @@ class _SigninState extends State<Signin> {
   showAlertDialog(BuildContext context) {
     // set up the button
     Widget okButton = TextButton(
-      child: Text("OK"),
+      child: Text(
+        "Submit",
+        style: GoogleFonts.getFont(
+          "Lato",
+          color: Appconstent.onyx,
+          fontWeight: FontWeight.w900,
+        ),
+      ),
       onPressed: () {
         Navigator.pop(context);
+        // OnboardPageview
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const OnboardPageview()),
+        );
+      },
+    );
+
+    Widget cancelButton = TextButton(
+      child: Text(
+        "Cancel",
+        style: GoogleFonts.getFont(
+          "Lato",
+          color: Appconstent.rust,
+          fontWeight: FontWeight.w900,
+        ),
+      ),
+      onPressed: () {
+        Navigator.pop(context);
+        // OnboardPageview
       },
     );
 
     // set up the AlertDialog
     AlertDialog alert = AlertDialog(
-      title: const Text("My title"),
-      content: Text("This is my message."),
+      backgroundColor: Appconstent.sand,
+      title: Text(
+        "One Time Password",
+        style: GoogleFonts.getFont(
+          "Lato",
+          color: Appconstent.onyx,
+        ),
+      ),
+      content: TextField(
+        style: GoogleFonts.getFont(
+          "Lato",
+          color: Appconstent.onyx,
+        ),
+        cursorColor: Appconstent.onyx,
+        decoration: InputDecoration(
+          enabledBorder: outlinemethod(),
+          focusedBorder: outlinemethod(),
+          border: outlinemethod(),
+          labelText: 'Email/Phone',
+          hintText: 'Enter Email or Phone',
+          hintStyle: GoogleFonts.getFont("Lato", color: Appconstent.onyx),
+          labelStyle: GoogleFonts.getFont("Lato", color: Appconstent.onyx),
+          focusColor: Appconstent.fossil,
+        ),
+      ),
       actions: [
+        cancelButton,
         okButton,
       ],
     );
