@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tractiv/constent/appconstent.dart';
 import 'package:tractiv/constent/whiteiconbutton.dart';
-import 'package:tractiv/onbording/onboardpageview.dart';
+import 'package:tractiv/screens/onbording/onboardpageview.dart';
 
 class Signin extends StatefulWidget {
   const Signin({super.key});

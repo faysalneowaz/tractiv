@@ -46,7 +46,6 @@ class _OnbordingScreenState extends State<OnbordingScreen> {
                 const SizedBox(
                   height: 20.0,
                 ),
-
                 SizedBox(
                   height: 1.0,
                   width: 30.0,
@@ -54,15 +53,9 @@ class _OnbordingScreenState extends State<OnbordingScreen> {
                     color: Appconstent.snow,
                   ),
                 ),
-                // Divider(
-                //   color: Appconstent.snow,
-                //   height: 1.0,
-                // ),
-
                 const SizedBox(
                   height: 20.0,
                 ),
-
                 Text(
                   "With goal a driven approach",
                   style: GoogleFonts.getFont(

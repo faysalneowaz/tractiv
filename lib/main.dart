@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tractiv/onbording/onbordingscreen.dart';
+import 'package:tractiv/screens/onbording/onbordingscreen.dart';
 
 void main() {
   runApp(const MyApp());

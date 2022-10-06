@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tractiv/constent/appconstent.dart';
-import 'package:tractiv/onbording/body/onboarding2.dart';
-import 'package:tractiv/onbording/body/onboarding3.dart';
-import 'package:tractiv/onbording/body/onbording1.dart';
+import 'package:tractiv/screens/onbording/body/onboarding2.dart';
+import 'package:tractiv/screens/onbording/body/onboarding3.dart';
+import 'package:tractiv/screens/onbording/body/onbording1.dart';
 
 class OnboardPageview extends StatefulWidget {
   const OnboardPageview({super.key});

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tractiv/constent/appconstent.dart';
+import 'package:tractiv/model/activitymodel.dart';
 
 class Onboardscreen1 extends StatefulWidget {
   const Onboardscreen1({super.key});
@@ -10,6 +11,21 @@ class Onboardscreen1 extends StatefulWidget {
 }
 
 class _Onboardscreen1State extends State<Onboardscreen1> {
+  List<Activitymodel> activitymodel = [
+    Activitymodel(
+        aname: "Surfing",
+        aimg: "assets/image/surfingimg.png",
+        aicon: "assets/image/surficon.png"),
+    Activitymodel(
+        aname: "Hiking",
+        aimg: "assets/image/hikingimg.png",
+        aicon: "assets/image/hiking.png"),
+    Activitymodel(
+        aname: "Yoga",
+        aimg: "assets/image/yogaimg.png",
+        aicon: "assets/image/weighticon.png"),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -49,14 +65,26 @@ class _Onboardscreen1State extends State<Onboardscreen1> {
               fontSize: 16,
             ),
           ),
-          ListView.builder(
-              itemCount: 0,
-              itemBuilder: (context, index) {
-                return Container(
-                  height: 10,
-                  width: 10,
-                );
-              })
+          Container(
+            height: 200,
+            width: MediaQuery.of(context).size.width,
+            color: Colors.blue,
+            child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: activitymodel.length,
+                shrinkWrap: true,
+                itemBuilder: (context, index) {
+                  return Container(
+                    height: 80,
+                    width: 130,
+                    margin: const EdgeInsets.only(left: 15),
+                    color: Colors.amber,
+                    child: ListTile(
+                      title: Text(activitymodel[index].aname),
+                    ),
+                  );
+                }),
+          )
         ],
       ),
     );
