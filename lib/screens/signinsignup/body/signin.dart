@@ -40,6 +40,9 @@ class _SigninState extends State<Signin> {
           height: 30,
         ),
         Whiteiconbtn(
+          pressed: () {
+            showAlertDialog(context);
+          },
           icon: Icons.arrow_forward_ios,
           text: "SIGN IN",
           radius: 30.0,
@@ -47,6 +50,32 @@ class _SigninState extends State<Signin> {
           height: 60,
         ),
       ],
+    );
+  }
+
+  showAlertDialog(BuildContext context) {
+    // set up the button
+    Widget okButton = TextButton(
+      child: Text("OK"),
+      onPressed: () {},
+    );
+
+    // set up the AlertDialog
+    AlertDialog alert = AlertDialog(
+      title: Text("My title"),
+      content: Text("This is my message."),
+      actions: [
+        okButton,
+      ],
+    );
+
+    // show the dialog
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (BuildContext context) {
+        return alert;
+      },
     );
   }
 

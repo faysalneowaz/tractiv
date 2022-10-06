@@ -16,6 +16,7 @@ class _SignupemailphoneState extends State<Signupemailphone> {
     return Column(
       children: [
         Whiteiconbtn(
+          pressed: () {},
           icon: Icons.email_outlined,
           text: "SIGN UP WITH EMAIL",
           radius: 30.0,

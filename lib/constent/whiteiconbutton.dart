@@ -7,6 +7,7 @@ class Whiteiconbtn extends StatelessWidget {
   double radius;
   double height;
   double width;
+  void Function()? pressed;
 
   Whiteiconbtn({
     Key? key,
@@ -15,12 +16,13 @@ class Whiteiconbtn extends StatelessWidget {
     required this.radius,
     required this.height,
     required this.width,
+    this.pressed,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton.icon(
-      onPressed: () {},
+      onPressed: pressed,
       icon: Icon(
         icon,
         color: Appconstent.onyx,
