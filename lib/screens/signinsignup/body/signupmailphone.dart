@@ -1,7 +1,5 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import 'package:tractiv/constent/appconstent.dart';
 import 'package:tractiv/constent/whiteiconbutton.dart';
 
@@ -24,6 +22,26 @@ class _SignupemailphoneState extends State<Signupemailphone> {
           width: MediaQuery.of(context).size.width,
           height: 60,
         ),
+        const SizedBox(
+          height: 30,
+        ),
+        OutlinedButton(
+          onPressed: () {},
+          style: OutlinedButton.styleFrom(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(30.0),
+              ),
+              side: const BorderSide(width: 2, color: Appconstent.sage),
+              fixedSize: Size(MediaQuery.of(context).size.width, 60)),
+          child: Text(
+            "SIGN UP WITH PHONE NUMBER",
+            style: GoogleFonts.getFont(
+              "Lato",
+              color: Appconstent.snow,
+              fontSize: 16,
+            ),
+          ),
+        )
       ],
     );
   }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tractiv/constent/appconstent.dart';
+import 'package:tractiv/screens/signinsignup/body/signin.dart';
 import 'package:tractiv/screens/signinsignup/body/signupmailphone.dart';
 
 class Signinsignupscreen extends StatefulWidget {
@@ -15,7 +16,6 @@ class _SigninsignupscreenState extends State<Signinsignupscreen>
   TabController? _tabController;
   @override
   void initState() {
-    // TODO: implement initState
     _tabController = TabController(length: 2, vsync: this);
 
     super.initState();
@@ -31,13 +31,12 @@ class _SigninsignupscreenState extends State<Signinsignupscreen>
         decoration: const BoxDecoration(
           color: Appconstent.drab,
         ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
+        child: ListView(
+          // physics: NeverScrollableScrollPhysics(),
           children: [
             Image.asset("assets/image/logo_stacked_color.png"),
             const SizedBox(
-              height: 50.0,
+              height: 15.0,
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -53,7 +52,7 @@ class _SigninsignupscreenState extends State<Signinsignupscreen>
                   ),
                 ),
                 const SizedBox(
-                  height: 15.0,
+                  height: 10.0,
                 ),
                 SizedBox(
                   height: 1.0,
@@ -63,7 +62,7 @@ class _SigninsignupscreenState extends State<Signinsignupscreen>
                   ),
                 ),
                 const SizedBox(
-                  height: 20.0,
+                  height: 10.0,
                 ),
                 Text(
                   "For the best experience \nwith Tractiv",
@@ -76,7 +75,7 @@ class _SigninsignupscreenState extends State<Signinsignupscreen>
               ],
             ),
             const SizedBox(
-              height: 50.0,
+              height: 10.0,
             ),
             Material(
               elevation: 5,
@@ -97,16 +96,15 @@ class _SigninsignupscreenState extends State<Signinsignupscreen>
               ),
             ),
             Container(
-              margin: EdgeInsets.only(top: 30),
-              padding: EdgeInsets.all(12.0),
-              color: Colors.amber,
-              height: 150,
+              margin: const EdgeInsets.only(top: 40),
+              padding: const EdgeInsets.all(8.0),
+              height: 180,
               width: double.maxFinite,
               child: TabBarView(
                 controller: _tabController,
                 children: const [
                   Signupemailphone(),
-                  Text("Tab1"),
+                  Signin(),
                 ],
               ),
             ),

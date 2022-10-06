@@ -11,7 +11,7 @@ class Whiteiconbtn extends StatelessWidget {
   Whiteiconbtn({
     Key? key,
     this.text,
-    required this.icon,
+    this.icon,
     required this.radius,
     required this.height,
     required this.width,
@@ -24,11 +24,13 @@ class Whiteiconbtn extends StatelessWidget {
       icon: Icon(
         icon,
         color: Appconstent.onyx,
+        size: 25,
       ),
       label: Text(
         text!,
         style: const TextStyle(
           color: Appconstent.onyx,
+          fontSize: 16,
         ),
       ),
       style: ElevatedButton.styleFrom(
