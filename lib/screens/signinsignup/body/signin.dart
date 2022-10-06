@@ -57,12 +57,14 @@ class _SigninState extends State<Signin> {
     // set up the button
     Widget okButton = TextButton(
       child: Text("OK"),
-      onPressed: () {},
+      onPressed: () {
+        Navigator.pop(context);
+      },
     );
 
     // set up the AlertDialog
     AlertDialog alert = AlertDialog(
-      title: Text("My title"),
+      title: const Text("My title"),
       content: Text("This is my message."),
       actions: [
         okButton,
