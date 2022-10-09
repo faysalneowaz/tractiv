@@ -13,20 +13,23 @@ class Onboardscreen1 extends StatefulWidget {
 class _Onboardscreen1State extends State<Onboardscreen1> {
   List<Activitymodel> activitymodel = [
     Activitymodel(
-        aname: "Surfing",
-        aimg: "assets/image/surfingimg.png",
-        aicon: "assets/image/surficon.png",
-        aplacename: "OCEAN BEACH"),
+      aname: "Surfing",
+      aimg: "assets/image/surfingimg.png",
+      aicon: "assets/image/surficon.png",
+      aplacename: "OCEAN BEACH",
+    ),
     Activitymodel(
-        aname: "Hiking",
-        aimg: "assets/image/hikingimg.png",
-        aicon: "assets/image/hiking.png",
-        aplacename: "TORREY PINES"),
+      aname: "Hiking",
+      aimg: "assets/image/hikingimg.png",
+      aicon: "assets/image/hiking.png",
+      aplacename: "TORREY PINES",
+    ),
     Activitymodel(
-        aname: "Yoga",
-        aimg: "assets/image/yogaimg.png",
-        aicon: "assets/image/weighticon.png",
-        aplacename: "SOLANA BEACH"),
+      aname: "Yoga",
+      aimg: "assets/image/yogaimg.png",
+      aicon: "assets/image/weighticon.png",
+      aplacename: "SOLANA BEACH",
+    ),
   ];
 
   @override
@@ -106,28 +109,49 @@ class _Onboardscreen1State extends State<Onboardscreen1> {
                             child: Image.asset(activitymodel[index].aicon),
                           ),
                         ),
-                        Positioned(
-                          left: 35,
-                          bottom: 50,
-                          child: Text(
-                            activitymodel[index].aname,
-                            style: GoogleFonts.getFont(
-                              "Lato",
-                              fontSize: 18,
-                              fontWeight: FontWeight.w900,
+                        Container(
+                          margin: const EdgeInsets.only(
+                            bottom: 45,
+                          ),
+                          child: Align(
+                            alignment: Alignment.bottomCenter,
+                            child: Text(
+                              activitymodel[index].aname,
+                              style: GoogleFonts.getFont(
+                                "Lato",
+                                fontSize: 18,
+                                color: Appconstent.onyx,
+                                fontWeight: FontWeight.w900,
+                              ),
                             ),
                           ),
                         ),
-                        Positioned(
-                          bottom: 40,
-                          child: Text(
-                            activitymodel[index].aplacename,
-                            style: GoogleFonts.getFont(
-                              "Lato",
-                              fontSize: 14,
+                        Container(
+                          margin: const EdgeInsets.only(
+                            bottom: 20,
+                          ),
+                          child: Align(
+                            alignment: Alignment.bottomCenter,
+                            child: Text(
+                              activitymodel[index].aplacename,
+                              style: GoogleFonts.getFont(
+                                "Lato",
+                                color: Appconstent.onyx,
+                                fontSize: 12,
+                              ),
                             ),
                           ),
                         ),
+                        // Positioned(
+                        //   bottom: 30,
+                        //   child: Text(
+                        //     activitymodel[index].aplacename,
+                        //     style: GoogleFonts.getFont(
+                        //       "Lato",
+                        //       fontSize: 14,
+                        //     ),
+                        //   ),
+                        // ),
                       ],
                     ),
                   );
