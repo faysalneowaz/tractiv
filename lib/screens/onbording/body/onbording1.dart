@@ -15,15 +15,18 @@ class _Onboardscreen1State extends State<Onboardscreen1> {
     Activitymodel(
         aname: "Surfing",
         aimg: "assets/image/surfingimg.png",
-        aicon: "assets/image/surficon.png"),
+        aicon: "assets/image/surficon.png",
+        aplacename: "OCEAN BEACH"),
     Activitymodel(
         aname: "Hiking",
         aimg: "assets/image/hikingimg.png",
-        aicon: "assets/image/hiking.png"),
+        aicon: "assets/image/hiking.png",
+        aplacename: "TORREY PINES"),
     Activitymodel(
         aname: "Yoga",
         aimg: "assets/image/yogaimg.png",
-        aicon: "assets/image/weighticon.png"),
+        aicon: "assets/image/weighticon.png",
+        aplacename: "SOLANA BEACH"),
   ];
 
   @override
@@ -68,7 +71,7 @@ class _Onboardscreen1State extends State<Onboardscreen1> {
           Container(
             height: 200,
             width: MediaQuery.of(context).size.width,
-            color: Colors.blue,
+            margin: const EdgeInsets.only(top: 30),
             child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: activitymodel.length,
@@ -78,9 +81,54 @@ class _Onboardscreen1State extends State<Onboardscreen1> {
                     height: 80,
                     width: 130,
                     margin: const EdgeInsets.only(left: 15),
-                    color: Colors.amber,
-                    child: ListTile(
-                      title: Text(activitymodel[index].aname),
+                    decoration: const BoxDecoration(
+                      color: Appconstent.snow,
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(15),
+                        topRight: Radius.circular(15),
+                        bottomLeft: Radius.circular(15),
+                        bottomRight: Radius.circular(15),
+                      ),
+                    ),
+                    child: Stack(
+                      children: [
+                        Image.asset(activitymodel[index].aimg),
+                        Positioned(
+                          left: 42,
+                          top: 75,
+                          child: Container(
+                            height: 45,
+                            width: 45,
+                            decoration: BoxDecoration(
+                              color: Appconstent.snow,
+                              borderRadius: BorderRadius.circular(25),
+                            ),
+                            child: Image.asset(activitymodel[index].aicon),
+                          ),
+                        ),
+                        Positioned(
+                          left: 35,
+                          bottom: 50,
+                          child: Text(
+                            activitymodel[index].aname,
+                            style: GoogleFonts.getFont(
+                              "Lato",
+                              fontSize: 18,
+                              fontWeight: FontWeight.w900,
+                            ),
+                          ),
+                        ),
+                        Positioned(
+                          bottom: 40,
+                          child: Text(
+                            activitymodel[index].aplacename,
+                            style: GoogleFonts.getFont(
+                              "Lato",
+                              fontSize: 14,
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   );
                 }),

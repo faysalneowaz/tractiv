@@ -3,10 +3,12 @@ class Activitymodel {
   String aname;
   String aimg;
   String aicon;
+  String aplacename;
 
   Activitymodel({
     required this.aname,
     required this.aimg,
     required this.aicon,
+    required this.aplacename,
   });
 }
