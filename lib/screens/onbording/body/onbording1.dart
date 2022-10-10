@@ -142,16 +142,6 @@ class _Onboardscreen1State extends State<Onboardscreen1> {
                             ),
                           ),
                         ),
-                        // Positioned(
-                        //   bottom: 30,
-                        //   child: Text(
-                        //     activitymodel[index].aplacename,
-                        //     style: GoogleFonts.getFont(
-                        //       "Lato",
-                        //       fontSize: 14,
-                        //     ),
-                        //   ),
-                        // ),
                       ],
                     ),
                   );

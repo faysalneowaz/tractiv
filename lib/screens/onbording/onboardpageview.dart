@@ -87,6 +87,27 @@ class _OnboardPageviewState extends State<OnboardPageview> {
                     _indicator(false),
               ],
             ),
+            Container(
+              margin: const EdgeInsets.only(top: 35, left: 65, right: 65),
+              child: ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  elevation: 5.0,
+                  fixedSize: const Size(25, 55),
+                  backgroundColor: Appconstent.snow,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(25)),
+                ),
+                child: Text(
+                  "Next",
+                  style: GoogleFonts.getFont(
+                    "Lato",
+                    fontSize: 16,
+                    color: Appconstent.onyx,
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),
