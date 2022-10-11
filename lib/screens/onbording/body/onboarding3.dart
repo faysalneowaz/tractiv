@@ -15,7 +15,7 @@ class _Onboardscreen3State extends State<Onboardscreen3> {
   Widget build(BuildContext context) {
     return Container(
       // padding: const EdgeInsets.all(12.0),
-      margin: EdgeInsets.only(top: 20),
+      margin: const EdgeInsets.only(top: 20),
       height: MediaQuery.of(context).size.height / 1.8,
       width: MediaQuery.of(context).size.width,
       child: Column(
@@ -64,12 +64,10 @@ class _Onboardscreen3State extends State<Onboardscreen3> {
                 bottomLeft: Radius.circular(15),
               ),
             ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            child: Stack(
               children: [
                 SfCalendar(
                   view: CalendarView.week,
-                  // timeSlotViewSettings: ,
                 ),
               ],
             ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tractiv/constent/appconstent.dart';
+import 'package:tractiv/screens/dashboard/dashboard.dart';
 import 'package:tractiv/screens/onbording/body/onboarding2.dart';
 import 'package:tractiv/screens/onbording/body/onboarding3.dart';
 import 'package:tractiv/screens/onbording/body/onbording1.dart';
@@ -34,7 +35,13 @@ class _OnboardPageviewState extends State<OnboardPageview> {
                     : null,
         actions: [
           TextButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const Dashboardscreen()),
+              );
+            },
             child: Text(
               "Skip",
               style: GoogleFonts.getFont(
@@ -71,7 +78,7 @@ class _OnboardPageviewState extends State<OnboardPageview> {
                 // reverse: true,
                 // physics: BouncingScrollPhysics(),
                 controller: controller,
-                onPageChanged: (num) {
+                onPageChanged: (int num) {
                   setState(() {
                     currentindex = num;
                   });

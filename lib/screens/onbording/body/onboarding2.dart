@@ -56,9 +56,9 @@ class _Onboardscreen2State extends State<Onboardscreen2> {
             decoration: BoxDecoration(
               color: Appconstent.rust,
               borderRadius: BorderRadius.circular(65),
-              boxShadow: [
+              boxShadow: const [
                 BoxShadow(
-                  offset: const Offset(0.0, 0.0),
+                  offset: Offset(0.0, 0.0),
                   blurRadius: 25.0,
                   spreadRadius: 8.0,
                   color: Colors.black45,
