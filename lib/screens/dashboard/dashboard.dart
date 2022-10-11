@@ -1,5 +1,6 @@
 import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:tractiv/constent/appconstent.dart';
 
 class Dashboardscreen extends StatefulWidget {
@@ -9,7 +10,16 @@ class Dashboardscreen extends StatefulWidget {
   State<Dashboardscreen> createState() => _DashboardscreenState();
 }
 
-class _DashboardscreenState extends State<Dashboardscreen> {
+class _DashboardscreenState extends State<Dashboardscreen>
+    with SingleTickerProviderStateMixin {
+  TabController? _tabController;
+  @override
+  void initState() {
+    _tabController = TabController(length: 2, vsync: this);
+
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,15 +34,52 @@ class _DashboardscreenState extends State<Dashboardscreen> {
         iconTheme: const IconThemeData(color: Appconstent.drab),
         actions: [
           Badge(
-            position: BadgePosition.topEnd(top: 12, end: 12),
+            position: BadgePosition.topEnd(top: 5, end: 5),
+            badgeColor: Appconstent.sage,
+            badgeContent: Text(
+              "2",
+              style: GoogleFonts.getFont(
+                "Lato",
+                color: Appconstent.ice,
+                fontSize: 14,
+              ),
+            ),
             child: IconButton(
               onPressed: () {},
               icon: Icon(Icons.inbox_outlined),
             ),
           ),
         ],
+        bottom: TabBar(
+          controller: _tabController,
+          indicatorColor: Appconstent.rust, // here is red underline
+          labelPadding: const EdgeInsets.all(15),
+          unselectedLabelColor: Appconstent.drabshade,
+          labelColor: Appconstent.drab,
+
+          labelStyle: GoogleFonts.getFont(
+            "Lato",
+            fontWeight: FontWeight.w900,
+          ),
+          tabs: const [
+            Text('You'),
+            Text('Friends'),
+          ],
+        ),
       ),
       drawer: Drawer(),
+      // bottomNavigationBar: ,
+      body: TabBarView(
+        controller: _tabController,
+        children: const [
+          const Center(
+            child: Text("Tab1"),
+          ),
+          const Center(
+            child: Text("Tab2"),
+          ),
+        ],
+      ),
     );
   }
 }
