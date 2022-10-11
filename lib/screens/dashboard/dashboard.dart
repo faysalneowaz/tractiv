@@ -71,12 +71,21 @@ class _DashboardscreenState extends State<Dashboardscreen>
       // bottomNavigationBar: ,
       body: TabBarView(
         controller: _tabController,
-        children: const [
+        children: [
           const Center(
             child: Text("Tab1"),
           ),
-          const Center(
-            child: Text("Tab2"),
+          Container(
+            child: Column(
+              children: [
+                Row(
+                  children: [],
+                ),
+                Row(
+                  children: [],
+                ),
+              ],
+            ),
           ),
         ],
       ),
